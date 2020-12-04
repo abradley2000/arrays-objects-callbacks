@@ -135,7 +135,14 @@ contains(names, 'Colt', function(result){
 //Code Here
 
 function uniq(inputArray, callback){
-  callback(['alice', 'bob', 'charlie', 'danielle', 'tester']);
+  for (let i = 0; i < inputArray.length; i++){
+    for (let j = i + 1; j < inputArray.length; j++){
+      if (inputArray[i] === inputArray[j]){
+        inputArray.splice(j, 1)
+      }
+    }
+  }
+  callback(inputArray)
 }; 
 
 // Do not edit the code below.
